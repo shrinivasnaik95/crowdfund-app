@@ -11,6 +11,37 @@ export default function Dashboard({ setToken }) {
 
   // 🔥 LOAD CAMPAIGNS
   const loadCampaigns = async () => {
+    if (window.location.hostname !== "localhost") {
+
+  setCampaigns([
+    {
+      id: 1,
+      title: "Medical Emergency Support",
+      description:
+        "Help raise funds for urgent surgery and hospital expenses.",
+      targetAmount: 50000,
+      collectedAmount: 32500,
+      status: "ACTIVE",
+      withdrawnAmount: 5000,
+      imageUrl:
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d"
+    },
+    {
+      id: 2,
+      title: "Education For Children",
+      description:
+        "Support underprivileged students with school supplies.",
+      targetAmount: 75000,
+      collectedAmount: 61000,
+      status: "ACTIVE",
+      withdrawnAmount: 12000,
+      imageUrl:
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7"
+    }
+  ]);
+
+  return;
+}
     try {
       const data = await getCampaigns();
       setCampaigns(data);
