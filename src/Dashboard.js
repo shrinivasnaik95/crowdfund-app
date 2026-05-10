@@ -305,6 +305,29 @@ const loadCampaigns = async () => {
           })}
         </div>
       </div>
+          <footer
+  className="text-center p-4 mt-5 bg-light"
+>
+  <a href="/about" className="me-3">
+    About
+  </a>
+
+  <a href="/contact" className="me-3">
+    Contact
+  </a>
+
+  <a href="/privacy" className="me-3">
+    Privacy
+  </a>
+
+  <a href="/terms">
+    Terms
+  </a>
+
+  <p className="mt-3 mb-0">
+    © 2026 CrowdFund
+  </p>
+</footer>
     </>
   );
 }
