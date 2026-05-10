@@ -58,45 +58,6 @@ const loadCampaigns = async () => {
       }
     ]);
 
-    return;
-  }
-
-  // 🔥 LOCALHOST REAL BACKEND
-  try {
-
-    const data = await getCampaigns();
-
-    setCampaigns(data);
-
-  } catch (e) {
-
-    console.error(
-      "Error loading campaigns",
-      e
-    );
-
-  }
-};
-
-    return;
-  }
-
-  try {
-
-    const data = await getCampaigns();
-
-    setCampaigns(data);
-
-  } catch (e) {
-
-    console.error(
-      "Error loading campaigns",
-      e
-    );
-
-  }
-};
-
   return;
 }
     try {
