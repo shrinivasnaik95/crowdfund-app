@@ -10,51 +10,73 @@ export default function Dashboard({ setToken }) {
   const userId = localStorage.getItem("userId");
 
   // 🔥 LOAD CAMPAIGNS
- const loadCampaigns = async () => {
+// 🔥 LOAD CAMPAIGNS
+const loadCampaigns = async () => {
 
+  // 🔥 DEMO MODE FOR DEPLOYED WEBSITE
   if (window.location.hostname !== "localhost") {
 
-   setCampaigns([
-  {
-    id: 1,
-    title: "Medical Emergency Support",
+    setCampaigns([
+      {
+        id: 1,
+        title: "Medical Emergency Support",
 
-    description:
-      "Help raise funds for urgent surgery and hospital expenses.",
+        description:
+          "Help raise funds for urgent surgery and hospital expenses.",
 
-    targetAmount: 50000,
-    collectedAmount: 32500,
-    status: "ACTIVE",
-    withdrawnAmount: 5000,
+        targetAmount: 50000,
+        collectedAmount: 32500,
+        status: "ACTIVE",
+        withdrawnAmount: 5000,
 
-    owner: {
-      id: 999
-    },
+        owner: {
+          id: 999
+        },
 
-    imageUrl:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d"
-  },
+        imageUrl:
+          "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d"
+      },
 
-  {
-    id: 2,
-    title: "Education For Children",
+      {
+        id: 2,
+        title: "Education For Children",
 
-    description:
-      "Support underprivileged students with school supplies.",
+        description:
+          "Support underprivileged students with school supplies.",
 
-    targetAmount: 75000,
-    collectedAmount: 61000,
-    status: "ACTIVE",
-    withdrawnAmount: 12000,
+        targetAmount: 75000,
+        collectedAmount: 61000,
+        status: "ACTIVE",
+        withdrawnAmount: 12000,
 
-    owner: {
-      id: 999
-    },
+        owner: {
+          id: 999
+        },
 
-    imageUrl:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7"
+        imageUrl:
+          "https://images.unsplash.com/photo-1509062522246-3755977927d7"
+      }
+    ]);
+
+    return;
   }
-]);
+
+  // 🔥 LOCALHOST REAL BACKEND
+  try {
+
+    const data = await getCampaigns();
+
+    setCampaigns(data);
+
+  } catch (e) {
+
+    console.error(
+      "Error loading campaigns",
+      e
+    );
+
+  }
+};
 
     return;
   }
