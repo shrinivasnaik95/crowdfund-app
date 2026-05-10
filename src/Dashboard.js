@@ -14,45 +14,47 @@ export default function Dashboard({ setToken }) {
 
   if (window.location.hostname !== "localhost") {
 
-    setCampaigns([
-      {
-        id: 1,
-        title: "Medical Emergency Support",
-        description:
-          "Help raise funds for urgent surgery and hospital expenses.",
+   setCampaigns([
+  {
+    id: 1,
+    title: "Medical Emergency Support",
 
-        targetAmount: 50000,
-        collectedAmount: 32500,
-        status: "ACTIVE",
-        withdrawnAmount: 5000,
+    description:
+      "Help raise funds for urgent surgery and hospital expenses.",
 
-        owner: {
-          id: 999
-        },
+    targetAmount: 50000,
+    collectedAmount: 32500,
+    status: "ACTIVE",
+    withdrawnAmount: 5000,
 
-        imageUrl:
-          "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d"
-      },
+    owner: {
+      id: 999
+    },
 
-      {
-        id: 2,
-        title: "Education For Children",
-        description:
-          "Support underprivileged students with school supplies.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d"
+  },
 
-        targetAmount: 75000,
-        collectedAmount: 61000,
-        status: "ACTIVE",
-        withdrawnAmount: 12000,
+  {
+    id: 2,
+    title: "Education For Children",
 
-        owner: {
-          id: 999
-        },
+    description:
+      "Support underprivileged students with school supplies.",
 
-        imageUrl:
-          "https://images.unsplash.com/photo-1509062522246-3755977927d7"
-      }
-    ]);
+    targetAmount: 75000,
+    collectedAmount: 61000,
+    status: "ACTIVE",
+    withdrawnAmount: 12000,
+
+    owner: {
+      id: 999
+    },
+
+    imageUrl:
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7"
+  }
+]);
 
     return;
   }
