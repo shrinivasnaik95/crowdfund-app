@@ -8,6 +8,10 @@ import MyContributions from "./MyContributions";
 import Profile from "./Profile";
 import WithdrawHistory from "./WithdrawHistory";
 import TransactionHistory from "./TransactionHistory";
+import About from "./About";
+import Contact from "./Contact";
+import Privacy from "./Privacy";
+import Terms from "./Terms";
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [showSignup, setShowSignup] = useState(false);
@@ -47,6 +51,13 @@ function App() {
     <TransactionHistory
       setToken={setToken}
     />
+        <Route path="/about" element={<About />} />
+
+<Route path="/contact" element={<Contact />} />
+
+<Route path="/privacy" element={<Privacy />} />
+
+<Route path="/terms" element={<Terms />} />
   }
 />
 
