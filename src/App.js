@@ -45,19 +45,20 @@ function App() {
     <WithdrawHistory setToken={setToken} />
   }
 />
-<Route
-  path="/transactions"
-  element={
-    <TransactionHistory
-      setToken={setToken}
-    />
-        <Route path="/about" element={<About />} />
+     <Route path="/about" element={<About />} />
 
 <Route path="/contact" element={<Contact />} />
 
 <Route path="/privacy" element={<Privacy />} />
 
 <Route path="/terms" element={<Terms />} />
+<Route
+  path="/transactions"
+  element={
+    <TransactionHistory
+      setToken={setToken}
+    />
+       
   }
 />
 
