@@ -6,25 +6,70 @@ export default function Login({ setToken, goSignup }) {
   const [password, setPassword] = useState("");
 
   // ✅ FIXED FUNCTION
-  const handleLogin = async () => {
-    if (!email || !password) {
-      alert("All fields required");
-      return;
-    }
+ const handleLogin = async () => {
 
-    try {
-      const res = await loginUser({ email, password });
+  // 🔥 DEMO MODE FOR DEPLOYED WEBSITE
+  if (
+    window.location.hostname !== "localhost"
+  ) {
 
-      // 🔥 store JWT + userId
-      localStorage.setItem("token", res.token);
-      localStorage.setItem("userId", res.userId);
+    localStorage.setItem(
+      "token",
+      "demo-token"
+    );
 
-      setToken(res.token);
+    localStorage.setItem(
+      "userId",
+      "1"
+    );
 
-    } catch (e) {
-      alert("Login failed: " + (e.message || ""));
-    }
-  };
+    setToken("demo-token");
+
+    alert(
+      "Demo Mode Login Successful 🚀"
+    );
+
+    return;
+  }
+
+  // 🔥 LOCALHOST REAL LOGIN
+  try {
+
+    const res = await fetch(
+      "http://localhost:8081/api/users/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type":
+            "application/json"
+        },
+        body: JSON.stringify({
+          email,
+          password
+        })
+      }
+    );
+
+    const data = await res.json();
+
+    localStorage.setItem(
+      "token",
+      data.token
+    );
+
+    localStorage.setItem(
+      "userId",
+      data.userId
+    );
+
+    setToken(data.token);
+
+  } catch (e) {
+
+    alert("Login Failed ❌");
+
+  }
+};
 
   return (
     <div style={styles.container}>
